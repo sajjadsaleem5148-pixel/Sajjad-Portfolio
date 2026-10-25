@@ -1,0 +1,75 @@
+.hero { min-height:calc(100vh - 76px); display:flex; align-items:center; padding-top:80px; padding-bottom:76px; overflow:hidden; } .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:60px; } .eyebrow-line { display:flex; align-items:center; gap:10px; color:var(--text-secondary); font-size:.74rem; font-weight:800; letter-spacing:.18em; margin-bottom:20px; } .eyebrow-dot { width:7px; height:7px; border-radius:50%; background:var(--success); box-shadow:0 0 0 5px color-mix(in srgb,var(--success) 15%,transparent); } .hero h1 { max-width:760px; } .hero-kicker { color:var(--accent); font-size:clamp(1.1rem,2vw,1.55rem); font-weight:800; letter-spacing:-.03em; margin-bottom:18px; } .hero-intro { color:var(--text-secondary); font-size:1.08rem; max-width:570px; margin-bottom:28px; } .hero-actions { display:flex; flex-wrap:wrap; gap:12px; } .hero-meta { display:flex; flex-wrap:wrap; align-items:center; gap:18px; margin:27px 0 20px; } .status-badge { display:inline-flex; align-items:center; gap:8px; padding:7px 11px; border:1px solid color-mix(in srgb,var(--success) 40%,var(--border)); border-radius:999px; color:var(--success); font-size:.72rem; font-weight:800; } .status-badge span { width:6px; height:6px; border-radius:50%; background:var(--success); } .hero-note { color:var(--text-muted); font-size:.78rem; } .social-links { display:flex; align-items:center; gap:8px; } .social-links a { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--border); border-radius:50%; color:var(--text-secondary); transition:color .2s ease,border-color .2s ease,transform .2s ease; } .social-links a:hover { color:var(--accent); border-color:var(--accent); transform:translateY(-2px); } .hero-visual { min-height:570px; position:relative; display:grid; place-items:center; } .ambient-orb { position:absolute; width:430px; height:430px; border-radius:50%; background:var(--glow); opacity:.17; filter:blur(85px); } .portrait-frame { position:relative; width:min(390px,80%); aspect-ratio:4/5; border:1px solid color-mix(in srgb,var(--accent) 55%,var(--border)); border-radius:28px; padding:11px; transform:rotate(3deg); box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 10%,transparent),0 30px 80px color-mix(in srgb,var(--glow) 18%,transparent); background:color-mix(in srgb,var(--card) 82%,transparent); } .portrait-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; border-radius:20px; border:1px dashed color-mix(in srgb,var(--accent) 50%,var(--border)); background:linear-gradient(145deg,var(--elevated),var(--card)); color:var(--text-secondary); text-align:center; padding:26px; } .portrait-placeholder svg { color:var(--accent); } .portrait-placeholder strong { color:var(--text-primary); font-size:1.15rem; } .portrait-placeholder span { font-size:.85rem; } .portrait-placeholder small { color:var(--text-muted); font-size:.65rem; word-break:break-word; } .portrait-corner { position:absolute; width:25px; height:25px; right:-8px; bottom:22px; border-right:3px solid var(--accent); border-bottom:3px solid var(--accent); } .code-panel { position:absolute; z-index:2; border:1px solid var(--border); border-radius:12px; background:color-mix(in srgb,var(--elevated) 92%,transparent); box-shadow:var(--shadow); color:var(--text-secondary); font-size:.72rem; } .code-panel-top { top:50px; left:2%; width:175px; padding:11px 13px 13px; transform:rotate(-7deg); } .code-panel code { display:block; margin-top:9px; color:var(--accent); line-height:1.65; } .code-dot { display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:5px; } .code-dot.red { background:#ff6b6b; }.code-dot.yellow{background:#ffd166}.code-dot.green{background:#10d6a0}.code-panel-bottom { right:0; bottom:80px; display:flex; align-items:center; gap:8px; padding:11px 14px; transform:rotate(5deg); } .code-panel-bottom svg { color:var(--accent); }.code-panel-bottom b { color:var(--success); }.visual-caption { position:absolute; bottom:16px; left:9%; right:3%; display:flex; justify-content:space-between; color:var(--text-muted); font-size:.64rem; letter-spacing:.15em; font-weight:800; }.visual-caption span:first-child { color:var(--accent); }.scroll-cue { position:absolute; bottom:36px; left:calc(50% - 48px); display:flex; align-items:center; gap:8px; color:var(--text-muted); font-size:.7rem; font-weight:800; transform:rotate(-90deg) translateX(-50%); transform-origin:left center; }
+@media (max-width:900px) { .hero-grid { grid-template-columns:1fr; }.hero-visual { min-height:500px; max-width:600px; width:100%; margin:0 auto; }.scroll-cue { display:none; } } @media (max-width:500px) { .hero { padding-top:58px; }.hero-actions .button { flex:1; }.hero-visual { min-height:420px; }.portrait-frame { width:73%; }.code-panel-top { left:0; top:25px; transform:scale(.78) rotate(-7deg); transform-origin:top left; }.code-panel-bottom { bottom:40px; transform:scale(.82) rotate(5deg); transform-origin:bottom right; }.visual-caption { bottom:0; } }
+
+
+/* Passport-size portrait frame */
+.portrait-frame {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 7 / 9;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  border-radius: 18px;
+  padding: 8px;
+  transform: rotate(0deg);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent),
+    0 20px 50px color-mix(in srgb, var(--glow) 18%, transparent);
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+  overflow: visible;
+}
+
+/* Your actual photo */
+.developer-portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+}
+
+/* Keep decorative corner */
+.portrait-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: -7px;
+  bottom: 18px;
+  border-right: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+@media (max-width: 900px) {
+  .portrait-frame {
+    width: 260px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .portrait-frame {
+    width: 220px;
+    max-width: 75%;
+  }
+
+  .code-panel-top {
+    left: 0;
+    top: 25px;
+    transform: scale(.78) rotate(-7deg);
+    transform-origin: top left;
+  }
+
+  .code-panel-bottom {
+    bottom: 35px;
+    transform: scale(.82) rotate(5deg);
+    transform-origin: bottom right;
+  }
+
+  .visual-caption {
+    bottom: 0;
+  }
+}

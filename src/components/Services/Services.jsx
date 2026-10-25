@@ -1,0 +1,6 @@
+'use client';
+import { Layout, Layers3, Plug, Server, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { services } from '../../data/portfolioData';
+const icons = { layout: Layout, sparkles: Sparkles, layers: Layers3, plug: Plug, server: Server };
+export default function Services() { const reduce = useReducedMotion(); return <section id="services" className="section" aria-labelledby="services-title"><div className="container"><div className="section-heading-row"><div><p className="eyebrow">03 / SERVICES</p><h2 id="services-title">My <span>Services</span></h2></div><p>I’m here to help build modern, responsive and high-performing web applications.</p></div><div className="services-grid">{services.map((service, index) => { const Icon = icons[service.icon]; return <motion.article className="service-card" key={service.title} initial={reduce ? false : { opacity: 0, y: 16 }} whileInView={reduce ? {} : { opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.05 }}><div className="service-top"><Icon size={21} /><span>0{index + 1}</span></div><h3>{service.title}</h3><p>{service.description}</p></motion.article>; })}</div></div></section>; }
